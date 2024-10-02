@@ -1,0 +1,13 @@
+---
+const { imageSrc,alt } = Astro.props;
+---
+
+<div class="h-full w-full flex items-center justify-center">
+    <img
+      src={imageSrc}
+      width={300}
+      height={300}
+      class="h-full w-full object-cover"
+      alt={alt}
+    />
+  </div>

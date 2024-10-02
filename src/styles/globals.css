@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+   
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 0;
+  }
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .scroll-snap-container {
+    scroll-snap-type: y mandatory;
+  }
+
+  .scroll-snap-section {
+    scroll-snap-align: start;
+  }
+  

@@ -1,0 +1,165 @@
+---
+import "@/styles/globals.css";
+import Layout from "@/layouts/Layout.astro";
+import { SpotLight } from "@/components/ui/spotlight";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
+import Marquee from "@/components/ui/marquee";
+
+const content = [
+  {
+    title: "Virtual Companion",
+    description:
+      "Get a personalized online companion that understands your preferences. Whether you want to chat, have a virtual date, or just share your thoughts, our talent is here to give you a personalized, realistic experience anytime, anywhere.",
+    content: "Online Experience",
+  },
+  {
+    title: "Real-Time AI Chat",
+    description:
+      "Engage in meaningful conversations with AI talent that can mimic real human emotions and responses. Our AI is designed to adjust its tone and personality based on your interactions, giving you a truly lifelike experience. Ideal for those looking for companionship or someone to talk to at any time of the day.",
+    content: "AI in Your Phone !!!",
+  },
+  {
+    title: "In-Person Dates",
+    description:
+      "For those who prefer real human interaction, you can book a date with our professional talents. Whether it’s for a formal event, casual meet-up, or a day out, our platform makes the process seamless and discreet. Choose your preferred talent and schedule a date that suits your needs.",
+    content: "You Dont Want Touch Some Grass With New Person ?",
+  },
+
+  {
+    title: "Security and Privacy",
+    description:
+      "Your safety and privacy are our top priority. We provide a secure environment for both online and offline dates, ensuring that all interactions remain confidential and respectful. Our platform enforces strict guidelines to ensure a safe experience for all users.",
+    content: "of Course We Hide Your Information ",
+  },
+];
+
+const logos = [
+  {
+    name: "Microsoft",
+    img: "https://picsum.photos/id/1/200/300",
+  },
+  {
+    name: "Apple",
+    img: "https://picsum.photos/id/2/200/300",
+  },
+  {
+    name: "Google",
+    img: "https://picsum.photos/id/3/200/300",
+  },
+  {
+    name: "Facebook",
+    img: "https://picsum.photos/id/4/200/300",
+  },
+  {
+    name: "LinkedIn",
+    img: "https://picsum.photos/id/5/200/300",
+  },
+  {
+    name: "Twitter",
+    img: "https://picsum.photos/id/6/200/300",
+  },
+];
+---
+
+<Layout title="Welcome to SAHARI">
+  <div
+    class="h-[20rem] md:h-screen w-full flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden"
+  >
+    <SpotLight
+      client:load
+      className="-top-40 left-0 md:left-60 md:-top-20"
+      fill="#AE70FE"
+    />
+    <div class="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0">
+      <h1
+        class="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50"
+      >
+        SAHARI <br /><span class="text-[#AE70FE]">Sahabat Harianmu </span>
+      </h1>
+      <p
+        class="mt-4 font-normal text-2xl text-neutral-300 max-w-lg text-center mx-auto"
+      >
+        Offline & Online Date, AI Powered
+      </p>
+    </div>
+  </div>
+
+  <!-- Scrollable container -->
+  <div
+    class="scroll-snap-container h-screen overflow-y-scroll scroll-smooth"
+    style={{ scrollSnapType: "y mandatory" }}
+  >
+    <!-- Section 1 -->
+    <section
+      class="h-screen flex items-center justify-center scroll-snap-section"
+      style={{ scrollSnapAlign: "start" }}
+    >
+      <StickyScroll content={content} client:load />
+    </section>
+
+    <!-- Section 2 -->
+    <section
+      class="grid grid-cols-3 h-screen items-center justify-center scroll-snap-section"
+      style={{ scrollSnapAlign: "start" }}
+    >
+      <!-- Carousel 1 -->
+      <div
+        class="relative flex h-full w-96 flex-col items-center justify-center gap-4 overflow-hidden rounded-lg border bg-background px-20 md:shadow-xl"
+      >
+        <div class="flex flex-row gap-4 [perspective:300px]">
+          <Marquee
+            className="h-[35rem] justify-center overflow-hidden [--duration:60s] [--gap:1rem]"
+            vertical
+            style={{
+              transform:
+                "translateX(0px) translateY(0px) translateZ(-50px) rotateX(0deg) rotateY(-20deg) rotateZ(10deg) scale(1.5)",
+            }}
+          >
+            {logos.map((data) => (
+              <div>
+                <img
+                  src={data.img}
+                  alt={data.name}
+                  class="mx-auto h-full w-3/4 cursor-pointer rounded-xl border border-neutral-300 transition-all duration-300 hover:ring-1 hover:ring-neutral-300"
+                />
+              </div>
+            ))}
+          </Marquee>
+        </div>
+        <!-- Gradient overlays -->
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+      </div>
+      
+      <!-- Carousel 2 -->
+      <div
+        class="relative flex h-full w-96 flex-col items-center justify-center gap-4 overflow-hidden rounded-lg border bg-background px-20 md:shadow-xl"
+      >
+        <div class="flex flex-row gap-4 [perspective:300px]">
+          <Marquee
+            className="h-[35rem] justify-center overflow-hidden [--duration:60s] [--gap:1rem]"
+            vertical
+            style={{
+              transform:
+                "translateX(0px) translateY(0px) translateZ(-50px) rotateX(0deg) rotateY(-20deg) rotateZ(10deg) scale(1.5)",
+            }}
+          >
+            {logos.map((data) => (
+              <div>
+                <img
+                  src={data.img}
+                  alt={data.name}
+                  class="mx-auto h-full w-3/4 cursor-pointer rounded-xl border border-neutral-300 transition-all duration-300 hover:ring-1 hover:ring-neutral-300"
+                />
+              </div>
+            ))}
+          </Marquee>
+        </div>
+        <!-- Gradient overlays -->
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+      </div>
+    </section>
+  </div>
+</Layout>
